@@ -1,0 +1,41 @@
+<div style="margin-top: 100px">
+  <%= form_with url: '/questionnaires' do |f| %>
+    <%= f.label 'What to Eat' %>
+    <br>
+    <%= f.text_field :question_one %>
+    <br>
+    <br>
+    <%= f.label 'Location' %>
+    <br>
+    <%= f.text_field :question_two %>
+    <br>
+    <br>
+    <%= f.submit 'Submit' %>
+  <% end %>
+
+</div>
+
+
+<script>
+
+    let autocomplete;
+
+    function initMap(){
+
+        const input_to = document.getElementById('question_two')
+
+        const options = {
+            componentRestrictions: { country: "PK" },
+            fields: ["address_components", "geometry", "icon", "name"],
+            strictBounds: false,
+            types: ["establishment"],
+        };
+
+        autocomplete = new google.maps.places.Autocomplete(input_to, options);
+    }
+
+</script>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdIQygbTt6E8I-idAJtDUiLBYwXAio4dE&libraries=places&callback=initMap">
+</script>
