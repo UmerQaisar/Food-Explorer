@@ -17,15 +17,15 @@
           </li>
         <% end %>
 
-        <%# unless customer_signed_in? || restaurant_signed_in? %>
-<!--          <li class="nav-item active">-->
-            <%#= link_to 'User Sign In', new_customer_session_path, class: "nav-link #{active_class(new_customer_session_path)}" %>
-<!--          </li>-->
+        <% unless customer_signed_in? || restaurant_owner_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to 'User Sign In', new_customer_session_path, class: "nav-link #{active_class(new_customer_session_path)}" %>
+          </li>
 
-<!--          <li class="nav-item active">-->
-            <%#= link_to 'Restaurant Sign In', new_restaurant_session_path, class: "nav-link #{active_class(new_restaurant_session_path)}" %>
-<!--          </li>-->
-        <%# end %>
+          <li class="nav-item active">
+            <%= link_to 'Restaurant Sign In', new_restaurant_owner_session_path, class: "nav-link #{active_class(new_restaurant_owner_session_path)}" %>
+          </li>
+        <% end %>
 
 
       </ul>
@@ -38,11 +38,11 @@
           </div>
         <% end %>
 
-        <%# if restaurant_signed_in? %>
-<!--          <div class="form-control btn btn-danger me-2">-->
-            <%#= link_to 'Sign Out', destroy_restaurant_session_path, method: :delete, class: "nav-link" %>
-<!--          </div>-->
-        <%# end %>
+        <% if restaurant_owner_signed_in? %>
+          <div class="form-control btn btn-danger me-2">
+            <%= link_to 'Sign Out', destroy_restaurant_owner_session_path, method: :delete, class: "nav-link" %>
+          </div>
+        <% end %>
 
 
       </form>

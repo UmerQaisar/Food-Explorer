@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_20_122727) do
+ActiveRecord::Schema.define(version: 2022_09_20_141800) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -62,16 +62,22 @@ ActiveRecord::Schema.define(version: 2022_09_20_122727) do
     t.index ["customer_id"], name: "index_questionnaires_on_customer_id"
   end
 
-  create_table "restaurants", force: :cascade do |t|
+  create_table "restaurant_owners", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "restaurant_name"
+    t.string "location"
+    t.string "owner_name"
+    t.string "type"
+    t.string "description"
+    t.string "timings"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_restaurants_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_restaurants_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_restaurant_owners_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_restaurant_owners_on_reset_password_token", unique: true
   end
 
   create_table "reviews", force: :cascade do |t|
