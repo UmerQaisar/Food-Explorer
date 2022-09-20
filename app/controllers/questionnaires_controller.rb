@@ -1,4 +1,5 @@
 class QuestionnairesController < ApplicationController
+  before_action :authenticate_customer!
 
   def new
     @questionnaire = Questionnaire.new

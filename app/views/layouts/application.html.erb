@@ -6,17 +6,24 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdIQygbTt6E8I-idAJtDUiLBYwXAio4dE&libraries=places&callback=initMap">
-  </script>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 </head>
 
 <body>
-<%= yield %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <!--  Nav Bar-->
+  <%= render 'shared/navbar' %>
+
+  <% if flash[:notice] %>
+    <p class="alert alert-primary mx-5 my-2"><%= flash[:notice] %></p>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <p class="alert alert-danger mx-5 my-2"><%= alert %></p>
+  <% end %>
+
+  <%= yield %>
 </body>
 </html>

@@ -7,4 +7,6 @@ class Customer < ApplicationRecord
 
   #Relations
   has_many :questionnaires
+  has_many :reviews
+
 end

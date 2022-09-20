@@ -7,6 +7,7 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 Rails.start()
 Turbolinks.start()
@@ -15,3 +16,9 @@ ActiveStorage.start()
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.raty
+//= require ratyrate
+
+//= require jquery3
+//= require popper
+//= require bootstrap
