@@ -1,0 +1,49 @@
+<div style="margin-top: 100px">
+  <%= form_with url: '/reviews' do |f| %>
+    <%= f.label 'Restaurant Name' %>
+    <br>
+    <%= f.text_field :restaurant_name %>
+    <br>
+    <br>
+    <%= f.label 'Reviews' %>
+    <br>
+    <%= f.text_field :review %>
+    <br>
+    <br>
+    <%= f.label 'Ratings' %>
+    <br>
+    <%= f.text_field :rating %>
+    <br>
+    <br>
+    <%= f.label 'Receipt' %>
+    <br>
+    <%= f.file_field :images, multiple: true %>
+    <br>
+    <br>
+    <%= f.submit 'Submit' %>
+  <% end %>
+
+</div>
+<script>
+
+    let autocomplete;
+
+    function initMap(){
+
+        const input_to = document.getElementById('restaurant_name')
+
+        const options = {
+            componentRestrictions: { country: "PK" },
+            fields: ["address_components", "geometry", "icon", "name"],
+            strictBounds: false,
+            types: ["establishment"],
+        };
+
+        autocomplete = new google.maps.places.Autocomplete(input_to, options);
+    }
+
+</script>
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdIQygbTt6E8I-idAJtDUiLBYwXAio4dE&libraries=places&callback=initMap">
+</script>
