@@ -11,7 +11,7 @@ class QuestionnairesController < ApplicationController
       @question_two = current_customer.questionnaires.new(question_no: 2, description: params[:question_two] )
 
       if @question_one.save && @question_two.save
-        redirect_to reviews_path
+        redirect_to new_review_path
       end
     end
   end

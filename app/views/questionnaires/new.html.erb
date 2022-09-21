@@ -1,19 +1,21 @@
-<div style="margin-top: 100px">
+<div class="container col-lg-6" style="margin-top: 50px; margin-bottom: 100px">
+  <h2 class="mb-4">Questionnaire</h2>
   <%= form_with url: '/questionnaires' do |f| %>
-    <%= f.label 'What to Eat' %>
-    <br>
-    <%= f.text_field :question_one %>
-    <br>
-    <br>
-    <%= f.label 'Location' %>
-    <br>
-    <%= f.text_field :question_two %>
-    <br>
-    <br>
-    <%= f.submit 'Submit' %>
-  <% end %>
 
+    <div class="field mb-3">
+      <%= f.label 'What to Eat'  , class:"form-label" %><br/>
+      <%=  f.text_field :question_one, autofocus: true,  class:'form-control' %>
+    </div>
+
+    <div class="field mb-3">
+      <%= f.label 'Location'  , class:"form-label" %><br/>
+      <%= f.text_field :question_two, autofocus: true,  class:'form-control' %>
+    </div>
+
+    <%= f.submit 'Submit', class:'btn btn-primary' %>
+  <% end %>
 </div>
+
 
 
 <script>
