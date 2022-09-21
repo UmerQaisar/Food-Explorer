@@ -6,10 +6,12 @@ Rails.application.routes.draw do
     get :nearby, on: :collection
   end
 
-  resources :restaurants
+  resources :restaurants do
+    get :reviews, on: :collection
+  end
 
   # get 'home', to: 'reviews#homepage'
-  root to: 'reviews#new'
+  root to: 'home#homepage'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
