@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_20_141800) do
+ActiveRecord::Schema.define(version: 2022_09_21_114923) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2022_09_20_141800) do
     t.string "restaurant_name"
     t.string "location"
     t.string "owner_name"
-    t.string "type"
+    t.string "food_type"
     t.string "description"
     t.string "timings"
     t.string "reset_password_token"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2022_09_20_141800) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "contact"
     t.index ["email"], name: "index_restaurant_owners_on_email", unique: true
     t.index ["reset_password_token"], name: "index_restaurant_owners_on_reset_password_token", unique: true
   end

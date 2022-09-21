@@ -6,5 +6,6 @@ class RestaurantsController < ApplicationController
 
   def reviews
 
+    @reviews = Review.all.where(:restaurant_name => current_restaurant_owner.restaurant_name );
   end
 end
