@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_09_21_114923) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -56,7 +59,7 @@ ActiveRecord::Schema.define(version: 2022_09_21_114923) do
   create_table "questionnaires", force: :cascade do |t|
     t.integer "question_no"
     t.string "description"
-    t.integer "customer_id"
+    t.bigint "customer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_questionnaires_on_customer_id"
@@ -87,7 +90,7 @@ ActiveRecord::Schema.define(version: 2022_09_21_114923) do
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "customer_id"
+    t.bigint "customer_id"
     t.index ["customer_id"], name: "index_reviews_on_customer_id"
   end
 
