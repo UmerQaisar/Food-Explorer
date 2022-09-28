@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
   end
   def create
+    byebug
     @review = current_customer.reviews.new review_params
     if @review.save
       redirect_to new_review_path, notice: 'Review Added'
@@ -23,6 +24,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:restaurant_name, :review, :rating)
+    params.require(:review).permit(:restaurant_name, :review, :rating, :images => [])
   end
 end

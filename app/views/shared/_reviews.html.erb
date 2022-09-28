@@ -14,7 +14,9 @@
       <br>
       <br>
       <h6>Images</h6>
-      <%= review.images.each{|img| (image_tag(url_for(img)) )} %>
+      <% review.images.each do |img| %>
+        <%= image_tag(img, width: 200) %>
+      <% end %>
 
     </div>
   <% end %>
