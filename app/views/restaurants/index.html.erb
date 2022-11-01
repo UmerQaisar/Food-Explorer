@@ -1,4 +1,10 @@
 <div class="container col-lg-6" style="margin-top: 50px; margin-bottom: 100px">
   <h2 class="mb-4">My Restaurant</h2>
   <h6><%= @myrestaurant.restaurant_name %></h6>
+  <h6><%= @myrestaurant.email %></h6>
+  <h6><%= @myrestaurant.location %></h6>
+  <h6><%= @myrestaurant.food_type %></h6>
+  <h6><%= @myrestaurant.description %></h6>
+  <h6><%= @myrestaurant.timings %></h6>
+  <%= link_to "Edit", edit_restaurant_owner_registration_path	, class: 'btn btn-outline-success mt-4' %>
 </div>
