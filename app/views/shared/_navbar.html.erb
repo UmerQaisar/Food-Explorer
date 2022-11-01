@@ -25,11 +25,13 @@
           <li class="nav-item active">
             <%= link_to 'My Restaurant', restaurants_path, class: "nav-link #{active_class(restaurants_path)}" %>
           </li>
-
           <li class="nav-item active">
             <%= link_to 'Review about my Restaurant', reviews_restaurants_path, class: "nav-link #{active_class(reviews_restaurants_path)}" %>
           </li>
-        <% end %>
+          <li class="nav-item active">
+            <%= link_to 'Edit Restaurant', edit_restaurant_registration_path(current_restaurant), class: "nav-link #{active_class(edit_restaurant_registration_path(current_restaurant))}" %>
+          </li>
+      <% end %>
 
         <% unless customer_signed_in? || restaurant_owner_signed_in? %>
           <li class="nav-item active">
