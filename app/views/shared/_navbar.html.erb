@@ -17,8 +17,14 @@
           </li>
 
           <li class="nav-item active">
-            <%= link_to 'Edit Profile', edit_customer_registration_path(current_customer), class: "nav-link #{active_class(dit_customer_registration_path(current_customer))}" %>
+            <%= link_to 'Edit Profile', edit_customer_registration_path(current_customer), class: "nav-link #{active_class(edit_customer_registration_path(current_customer))}" %>
           </li>
+
+          <%= form_with url: reviews_path, class:'form-inline my-2 my-lg-0', method: :get do %>
+            <%= text_field_tag :restaurant_name, params[:restaurant_name], placeholder: "restaurant_name", class: "form-control mr-sm-2" %>
+            <%= submit_tag 'Search', class: "btn btn-outline-success my-2 my-sm-0" %>
+          <% end %>
+
         <% end %>
 
         <% if restaurant_owner_signed_in? %>
@@ -46,8 +52,7 @@
 
       </ul>
 
-      <form class="d-flex">
-
+      <div class="d-flex">
         <% if customer_signed_in? %>
           <div class="form-control btn btn-danger me-2">
             <%= link_to 'Sign Out', destroy_customer_session_path, method: :delete, class: "nav-link" %>
@@ -59,9 +64,8 @@
             <%= link_to 'Sign Out', destroy_restaurant_owner_session_path, method: :delete, class: "nav-link" %>
           </div>
         <% end %>
+      </div>
 
-
-      </form>
     </div>
   </div>
 </nav>

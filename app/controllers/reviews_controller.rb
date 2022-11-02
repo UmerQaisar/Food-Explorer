@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_questionnaire
 
   def index
-    @reviews = Review.all
+    @reviews = Review.search(params[:restaurant_name])
   end
   def new
     @review = Review.new
